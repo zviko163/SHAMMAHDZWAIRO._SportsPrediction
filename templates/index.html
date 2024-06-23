@@ -1,0 +1,51 @@
+<html >
+<head>
+  <title>Predict the Rating</title>  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+ <div>
+	<h1 class="text-center">Predict Overall FIFA Rating</h1>
+
+    <form class="p-3 text-center form-container" action="{{ url_for('getprediction')}}" method="post">
+        <div class="form-group">
+            <label for="value_eur">Value in Euros:</label>
+            <input type="text" name="value_eur" placeholder="Value(Euro)" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="movement_reactions">Movement and Reactions:</label>
+            <input type="text" name="movement_reactions" placeholder="Movement and Reactions" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="wage_eur">Wage in Euros:</label>
+            <input type="text" name="wage_eur" placeholder="Wage(Euro)" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="release_clause_eur">Release Clause:</label>
+            <input type="text" name="release_clause_eur" placeholder="Release Clause(Euro)" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="potential">Potential:</label>
+            <input type="text" name="potential" placeholder="Potential" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="mentality_composure">Mentality Composure:</label>
+            <input type="text" name="mentality_composure" placeholder="Mentality Composure" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="passing">Passing:</label>
+            <input type="text" name="passing" placeholder="Passing" required="required" />
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="btn btn-primary btn-block btn-large">Get Prediction</button>
+        </div>
+    </form>
+   <br>
+   <br>
+   {{ output }}
+
+ </div>
+
+</body>
+</html>
